@@ -50,15 +50,43 @@ let result = `${a} + ${b} is `;
 a + b < 10 ? result += 'less than 10' : result += 'greater than 10'
 // console.log(result) // += adds a string to an existing string and creates a new string
 
-function getGreeting(name) {
-    return 'Hello ' + name + '!';
-}
-console.log(getGreeting("Emma"))
+// function getGreeting(name) {
+//     return 'Hello ' + name + '!';
+// }
+// console.log(getGreeting("Emma"))
 
-const sayHello = function(name) {
-    console.log(`Hello ${name}!`);
-}
-sayHello("Emma")
+// const sayHello = function(name) {
+//     console.log(`Hello ${name}!`);
+// }
+// sayHello("Emma")
 
-const greetingArrow = (name) => console.log(`Hello ${name}!`)
-greetingArrow("Emma")
+// const greetingArrow = (name) => console.log(`Hello ${name}!`)
+// greetingArrow("Emma")
+
+const westley = {
+    name: 'Westley',
+    numFingers: 5
+}
+const rugen = {
+    name: 'Count Rugen',
+    numFingers: 6
+}
+
+const inigo = {
+    firstName: 'Inigo',
+    lastName: 'Montoya', 
+    greeting(person) {
+        let greeting = `Hello ${person.name}, my name is ${this.firstName} ${this.lastName}. `;
+        console.log(greeting + this.getCatchPhrase(person));
+    },
+    // getCatchPhrase(person) {
+    //     if (person.numFingers === 6){
+    //         return "You killed my father. Prepare to die."
+    //     }
+    //     return 'Nice to meet you.'
+    // }
+    getCatchPhrase: (person) => person.numFingers === 6 ? 'You killed my father. Prapare to die' : 'Nice to meet you.'
+}
+
+inigo.greeting(westley)
+inigo.greeting(rugen)
