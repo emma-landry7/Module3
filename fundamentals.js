@@ -147,4 +147,30 @@ const Lafayette = {
     timezone: 'Central'
 }
 
-info(Lafayette)
+// info(Lafayette)
+
+let teamSports = ['Hockey', 'Cricket', 'Volleyball'];
+// let moreSports = teamSports;
+
+let moreSports = [];
+for (let key in teamSports) { // shallow copy
+    moreSports[key] = teamSports[key];
+}
+moreSports.push('Soccer')
+moreSports.unshift('Baseball')
+
+let dog1 = 'Bingo';
+let dog2 = dog1;
+dog2 = 'Rex'
+
+let cat1 = { name: 'Fluffy', breed: 'Siberian' };
+// let cat2 = cat1;
+let cat2 = {...cat1}; // shallow copy with object spread
+cat2.name = 'Snowball'
+
+console.log(teamSports) // teamSports has changed because objects are stored by reference; an array is a type of object
+console.log(moreSports)
+console.log(dog1) // dog1 is not changed because it is a primitive value, not an object
+console.log(dog2)
+console.log(cat1) // cat1 changes because it is an object, and is stored by reference
+console.log(cat2)
