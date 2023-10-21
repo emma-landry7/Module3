@@ -37,3 +37,15 @@ let lessThan2 = thirty < four /* true; incorrect; JS compares strings character 
 // if (null) console.log('null is true') // will not print; null is false
 // if (-1) console.log('negative is true') // will print; numbers that are not 0 are true
 // if (1) console.log('positive is true') // will print; 1 is not 0
+
+let a = 4, b = 7;
+let result = `${a} + ${b} is `;
+
+// if (a + b < 10) {
+//     result += 'less than 10';
+// } else {
+//     result += 'greater than 10';
+// }
+
+a + b < 10 ? result += 'less than 10' : result += 'greater than 10'
+console.log(result) // += adds a string to an existing string and creates a new string
