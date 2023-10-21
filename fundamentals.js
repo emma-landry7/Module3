@@ -48,4 +48,17 @@ let result = `${a} + ${b} is `;
 // }
 
 a + b < 10 ? result += 'less than 10' : result += 'greater than 10'
-console.log(result) // += adds a string to an existing string and creates a new string
+// console.log(result) // += adds a string to an existing string and creates a new string
+
+function getGreeting(name) {
+    return 'Hello ' + name + '!';
+}
+console.log(getGreeting("Emma"))
+
+const sayHello = function(name) {
+    console.log(`Hello ${name}!`);
+}
+sayHello("Emma")
+
+const greetingArrow = (name) => console.log(`Hello ${name}!`)
+greetingArrow("Emma")
