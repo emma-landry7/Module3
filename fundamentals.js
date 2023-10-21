@@ -63,30 +63,62 @@ a + b < 10 ? result += 'less than 10' : result += 'greater than 10'
 // const greetingArrow = (name) => console.log(`Hello ${name}!`)
 // greetingArrow("Emma")
 
-const westley = {
-    name: 'Westley',
-    numFingers: 5
-}
-const rugen = {
-    name: 'Count Rugen',
-    numFingers: 6
-}
+// const westley = {
+//     name: 'Westley',
+//     numFingers: 5
+// }
+// const rugen = {
+//     name: 'Count Rugen',
+//     numFingers: 6
+// }
 
-const inigo = {
-    firstName: 'Inigo',
-    lastName: 'Montoya', 
-    greeting(person) {
-        let greeting = `Hello ${person.name}, my name is ${this.firstName} ${this.lastName}. `;
-        console.log(greeting + this.getCatchPhrase(person));
+// const inigo = {
+//     firstName: 'Inigo',
+//     lastName: 'Montoya', 
+//     greeting(person) {
+//         let greeting = `Hello ${person.name}, my name is ${this.firstName} ${this.lastName}. `;
+//         console.log(greeting + this.getCatchPhrase(person));
+//     },
+//     // getCatchPhrase(person) {
+//     //     if (person.numFingers === 6){
+//     //         return "You killed my father. Prepare to die."
+//     //     }
+//     //     return 'Nice to meet you.'
+//     // }
+//     getCatchPhrase: (person) => person.numFingers === 6 ? 'You killed my father. Prapare to die' : 'Nice to meet you.'
+// }
+
+// inigo.greeting(westley)
+// inigo.greeting(rugen)
+
+const basketballGame = {
+    score: 0,
+    freeThrow() {
+        this.score++;
+        return this;
     },
-    // getCatchPhrase(person) {
-    //     if (person.numFingers === 6){
-    //         return "You killed my father. Prepare to die."
-    //     }
-    //     return 'Nice to meet you.'
-    // }
-    getCatchPhrase: (person) => person.numFingers === 6 ? 'You killed my father. Prapare to die' : 'Nice to meet you.'
+    basket() {
+        this.score += 2;
+        return this;
+    },
+    threePointer() {
+        this.score += 3;
+        return this;
+    },
+    halfTime() {
+        console.log('Halftime score is '+this.score);
+        console.log('Halftime fouls: '+this.fouls);
+    },
+    fullTime() {
+        console.log('Final score is '+this.score);
+        console.log('Total fouls: '+this.fouls);
+    },
+    fouls: 0,
+    foul() {
+        this.fouls ++;
+        return this;
+    }
 }
 
-inigo.greeting(westley)
-inigo.greeting(rugen)
+basketballGame.basket().freeThrow().foul().freeThrow().basket().threePointer().foul().threePointer().halfTime()
+basketballGame.foul().basket().freeThrow().threePointer().foul().basket().foul().freeThrow().fullTime()
