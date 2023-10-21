@@ -91,34 +91,60 @@ a + b < 10 ? result += 'less than 10' : result += 'greater than 10'
 // inigo.greeting(westley)
 // inigo.greeting(rugen)
 
-const basketballGame = {
-    score: 0,
-    freeThrow() {
-        this.score++;
-        return this;
-    },
-    basket() {
-        this.score += 2;
-        return this;
-    },
-    threePointer() {
-        this.score += 3;
-        return this;
-    },
-    halfTime() {
-        console.log('Halftime score is '+this.score);
-        console.log('Halftime fouls: '+this.fouls);
-    },
-    fullTime() {
-        console.log('Final score is '+this.score);
-        console.log('Total fouls: '+this.fouls);
-    },
-    fouls: 0,
-    foul() {
-        this.fouls ++;
-        return this;
+// const basketballGame = {
+//     score: 0,
+//     freeThrow() {
+//         this.score++;
+//         return this;
+//     },
+//     basket() {
+//         this.score += 2;
+//         return this;
+//     },
+//     threePointer() {
+//         this.score += 3;
+//         return this;
+//     },
+//     halfTime() {
+//         console.log('Halftime score is '+this.score);
+//         console.log('Halftime fouls: '+this.fouls);
+//     },
+//     fullTime() {
+//         console.log('Final score is '+this.score);
+//         console.log('Total fouls: '+this.fouls);
+//     },
+//     fouls: 0,
+//     foul() {
+//         this.fouls ++;
+//         return this;
+//     }
+// }
+
+// basketballGame.basket().freeThrow().foul().freeThrow().basket().threePointer().foul().threePointer().halfTime()
+// basketballGame.foul().basket().freeThrow().threePointer().foul().basket().foul().freeThrow().fullTime()
+
+const Sydney = {
+    name: 'Sydney',
+    population: 5_121_000,
+    state: 'NSW',
+    founded: '26 January 1788',
+    timezone: 'Australia/Sydney'
+}
+
+function info(city) {
+    for (let key in city) {
+        console.log(key + ': ' + city[key])
     }
 }
 
-basketballGame.basket().freeThrow().foul().freeThrow().basket().threePointer().foul().threePointer().halfTime()
-basketballGame.foul().basket().freeThrow().threePointer().foul().basket().foul().freeThrow().fullTime()
+// info(Sydney)
+
+const Lafayette = {
+    name: 'Lafayette',
+    population: 121_771,
+    state: 'LA',
+    founded: '1821',
+    timezone: 'Central'
+}
+
+info(Lafayette)
