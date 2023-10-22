@@ -149,28 +149,62 @@ const Lafayette = {
 
 // info(Lafayette)
 
-let teamSports = ['Hockey', 'Cricket', 'Volleyball'];
-// let moreSports = teamSports;
+// let teamSports = ['Hockey', 'Cricket', 'Volleyball'];
+// // let moreSports = teamSports;
 
-let moreSports = [];
-for (let key in teamSports) { // shallow copy
-    moreSports[key] = teamSports[key];
+// let moreSports = [];
+// for (let key in teamSports) { // shallow copy
+//     moreSports[key] = teamSports[key];
+// }
+// moreSports.push('Soccer')
+// moreSports.unshift('Baseball')
+
+// let dog1 = 'Bingo';
+// let dog2 = dog1;
+// dog2 = 'Rex'
+
+// let cat1 = { name: 'Fluffy', breed: 'Siberian' };
+// // let cat2 = cat1;
+// let cat2 = {...cat1}; // shallow copy with object spread
+// cat2.name = 'Snowball'
+
+// console.log(teamSports) // teamSports has changed because objects are stored by reference; an array is a type of object
+// console.log(moreSports)
+// console.log(dog1) // dog1 is not changed because it is a primitive value, not an object
+// console.log(dog2)
+// console.log(cat1) // cat1 changes because it is an object, and is stored by reference
+// console.log(cat2)
+
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+    this.human = true;
+    this.canDrive = () => this.age >= 16;
 }
-moreSports.push('Soccer')
-moreSports.unshift('Baseball')
 
-let dog1 = 'Bingo';
-let dog2 = dog1;
-dog2 = 'Rex'
+const person1 = new Person('Carl', 28)
+const person2 = new Person('Larry', 42)
 
-let cat1 = { name: 'Fluffy', breed: 'Siberian' };
-// let cat2 = cat1;
-let cat2 = {...cat1}; // shallow copy with object spread
-cat2.name = 'Snowball'
+console.log(person1)
+console.log(person1.canDrive())
+console.log(person2)
+console.log(person2.canDrive())
 
-console.log(teamSports) // teamSports has changed because objects are stored by reference; an array is a type of object
-console.log(moreSports)
-console.log(dog1) // dog1 is not changed because it is a primitive value, not an object
-console.log(dog2)
-console.log(cat1) // cat1 changes because it is an object, and is stored by reference
-console.log(cat2)
+class PersonClass {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+        this.human = true;
+    }
+    canDrive() {
+        if (PersonClass.constructor.age >= 16) {
+            return 'This user can drive'
+        } else {
+        return 'This user cannot drive'
+        }
+    }
+}
+
+const person3 = new PersonClass('Tina', 14)
+console.log(person3)
+console.log(person3.canDrive())
