@@ -1,3 +1,4 @@
+// Question 1:
 function ucFirstLetters(string) {
     let separate = string.split(' ');
     for (let i = 0; i < separate.length; i++) {
@@ -9,7 +10,7 @@ function ucFirstLetters(string) {
 
 // console.log(ucFirstLetters("los angeles")) //Los Angeles
 
-
+// Question 2:
 // function truncate(str, max) {
 //     if (str.length <= max) {
 //         return str;
@@ -28,7 +29,7 @@ const truncate = function(str, max) {
 // console.log(truncate("This is a test of my declaration function", 15))
 // console.log(truncate('Test 2 of my declaration function', 50))
 
-
+// Question 3:
 const animals = ['Tiger', 'Giraffe']
 animals.push('Bear')
 animals.push('Hippo')
@@ -77,7 +78,8 @@ function findMatchingAnimals(beginsWith){
 // if startsWith returns true, add animal to new array
 // return new array
 
-// question 4 pseudo code:
+// Question 4:
+// pseudo code:
 // create a function camelCase
 // take in parameter cssProp
 // separate string at "-" with split()
@@ -115,7 +117,7 @@ function findMatchingAnimals(beginsWith){
 // console.log(camelCase('background-image'))
 // console.log(camelCase('display'))
 
-
+// Question 5:
 let twentyCents = 0.20
 let tenCents = 0.10
 
@@ -160,7 +162,7 @@ function currencyOperation(float1, float2, operation, numDecimals) {
 // console.log(currencyOperation(9.97, 3.32, '/'))
 // console.log(currencyOperation(2.34, 6.45, '*'))
 
-
+// Question 6:
 function unique(duplicatesArray) {
     const uniqueArray = new Set([...duplicatesArray]);
     return uniqueArray
@@ -170,6 +172,8 @@ const colors = ['red', 'green', 'blue', 'yellow', 'orange', 'red', 'blue', 'yell
 const testScores = [55, 84, 97, 63, 55, 32, 84, 91, 55, 43]
 const pets = ['dog', 'cat', 'hamster', 'dog', 'snake', 'cat', 'rabbit', 'dog']
 
-console.log(unique(colors))
-console.log(unique(testScores))
-console.log(unique(pets))
+// console.log(unique(colors))
+// console.log(unique(testScores))
+// console.log(unique(pets))
+
+// Question 7:
