@@ -155,7 +155,21 @@ function currencyOperation(float1, float2, operation, numDecimals) {
     }
 }
 
-console.log(currencyOperation(8.23, 2.71, '-'))
-console.log(currencyOperation(0.10, 0.20, '+')) 
-console.log(currencyOperation(9.97, 3.32, '/'))
-console.log(currencyOperation(2.34, 6.45, '*'))
+// console.log(currencyOperation(8.23, 2.71, '-'))
+// console.log(currencyOperation(0.10, 0.20, '+')) 
+// console.log(currencyOperation(9.97, 3.32, '/'))
+// console.log(currencyOperation(2.34, 6.45, '*'))
+
+
+function unique(duplicatesArray) {
+    const uniqueArray = new Set([...duplicatesArray]);
+    return uniqueArray
+}
+
+const colors = ['red', 'green', 'blue', 'yellow', 'orange', 'red', 'blue', 'yellow']
+const testScores = [55, 84, 97, 63, 55, 32, 84, 91, 55, 43]
+const pets = ['dog', 'cat', 'hamster', 'dog', 'snake', 'cat', 'rabbit', 'dog']
+
+console.log(unique(colors))
+console.log(unique(testScores))
+console.log(unique(pets))
