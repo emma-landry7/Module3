@@ -135,25 +135,22 @@ let fixedTen = tenCents.toFixed(2)
 
 // console.log(currencyAddition(.10, .20))
 
-function currencyOperation(float1, float2, operation) {
+function currencyOperation(float1, float2, operation, numDecimals) {
     let num1 = Number.parseFloat(float1);
     let num2 = Number.parseFloat(float2);
-    let expr = operation
-    switch (expr) {
+    // let expr = operation
+    switch (operation) {
         case '+':
-            let add = num1 + num2;
+            const add = num1 + num2;
             return add.toFixed(2);
-            break;
         case '-':
-            let subtract = num1 - num2;
+            const subtract = num1 - num2;
             return subtract.toFixed(2);
-            break;
         case '/':
-            let divide = num1 / num2;
+            const divide = num1 / num2;
             return divide.toFixed(2);
-            break;
         case '*':
-            let multiply = num1 * num2;
+            const multiply = num1 * num2;
             return multiply.toFixed(2)
     }
 }
@@ -165,11 +162,14 @@ function currencyOperation(float1, float2, operation) {
 
 
 function unique(duplicatesArray) {
-    
+    const uniqueArray = new Set([...duplicatesArray]);
+    return uniqueArray
 }
 
 const colors = ['red', 'green', 'blue', 'yellow', 'orange', 'red', 'blue', 'yellow']
 const testScores = [55, 84, 97, 63, 55, 32, 84, 91, 55, 43]
+const pets = ['dog', 'cat', 'hamster', 'dog', 'snake', 'cat', 'rabbit', 'dog']
 
 console.log(unique(colors))
 console.log(unique(testScores))
+console.log(unique(pets))
