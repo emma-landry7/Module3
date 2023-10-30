@@ -135,25 +135,22 @@ let fixedTen = tenCents.toFixed(2)
 
 // console.log(currencyAddition(.10, .20))
 
-function currencyOperation(float1, float2, operation) {
+function currencyOperation(float1, float2, operation, numDecimals) {
     let num1 = Number.parseFloat(float1);
     let num2 = Number.parseFloat(float2);
-    let expr = operation
-    switch (expr) {
+    // let expr = operation
+    switch (operation) {
         case '+':
-            let add = num1 + num2;
+            const add = num1 + num2;
             return add.toFixed(2);
-            break;
         case '-':
-            let subtract = num1 - num2;
+            const subtract = num1 - num2;
             return subtract.toFixed(2);
-            break;
         case '/':
-            let divide = num1 / num2;
+            const divide = num1 / num2;
             return divide.toFixed(2);
-            break;
         case '*':
-            let multiply = num1 * num2;
+            const multiply = num1 * num2;
             return multiply.toFixed(2)
     }
 }
