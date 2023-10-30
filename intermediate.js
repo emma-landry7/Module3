@@ -99,19 +99,63 @@ function findMatchingAnimals(beginsWith){
 //     }; return separate.join('')
 // }
 
-function camelCase(cssProp) {
-    let separate = cssProp.split('-');
-    for (let word in separate) {
-        // console.log(separate[word]);
-        if (separate.length != 1){
-            separate[1] = separate[1].slice(0, 1).toUpperCase() + separate[1].substr(1);
-        return separate.join('')
-        };
-        return separate.join('')
+// function camelCase(cssProp) {
+//     let separate = cssProp.split('-');
+//     for (let word in separate) {
+//         // console.log(separate[word]);
+//         if (separate.length != 1){
+//             separate[1] = separate[1].slice(0, 1).toUpperCase() + separate[1].substr(1);
+//         return separate.join('')
+//         };
+//         return separate.join('')
+//     }
+// }
+
+// console.log(camelCase('margin-left'))
+// console.log(camelCase('background-image'))
+// console.log(camelCase('display'))
+
+
+let twentyCents = 0.20
+let tenCents = 0.10
+
+// console.log(`${twentyCents} + ${tenCents} = ${twentyCents + tenCents}`)
+
+let fixedTwenty = twentyCents.toFixed(2)
+let fixedTen = tenCents.toFixed(2)
+
+// console.log(fixedTwenty + fixedTen) // this does not work because JavaScript sees these as strings and concatenates them, instead of treating them like numbers and adding them
+
+// function currencyAddition(float1, float2) {
+//     let num1 = Number.parseFloat(float1);
+//     let num2 = Number.parseFloat(float2);
+//     let result = num1 + num2;
+//     return result.toFixed(2)
+// }
+
+// console.log(currencyAddition(.10, .20))
+
+function currencyOperation(float1, float2, operation, numDecimals) {
+    let num1 = Number.parseFloat(float1);
+    let num2 = Number.parseFloat(float2);
+    // let expr = operation
+    switch (operation) {
+        case '+':
+            const add = num1 + num2;
+            return add.toFixed(2);
+        case '-':
+            const subtract = num1 - num2;
+            return subtract.toFixed(2);
+        case '/':
+            const divide = num1 / num2;
+            return divide.toFixed(2);
+        case '*':
+            const multiply = num1 * num2;
+            return multiply.toFixed(2)
     }
 }
 
-console.log(camelCase('margin-left'))
-console.log(camelCase('background-image'))
-console.log(camelCase('display'))
-
+console.log(currencyOperation(8.23, 2.71, '-'))
+console.log(currencyOperation(0.10, 0.20, '+')) 
+console.log(currencyOperation(9.97, 3.32, '/'))
+console.log(currencyOperation(2.34, 6.45, '*'))
