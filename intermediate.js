@@ -205,8 +205,11 @@ function getOldBooks() {
     return oldBooks
 }
 
-console.log(getOldBooks())
+// console.log(getOldBooks())
 
-function addGenre() {
-    
+function addGenre(genre) {
+    const genres = books.map(book => ({...book, genre: genre}))
+    return genres
 }
+
+console.log(addGenre('Classic'))
