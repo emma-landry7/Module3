@@ -177,3 +177,36 @@ const pets = ['dog', 'cat', 'hamster', 'dog', 'snake', 'cat', 'rabbit', 'dog']
 // console.log(unique(pets))
 
 // Question 7:
+
+const books = [
+    {id: 1, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', year: 1925},
+    {id: 2, title: 'To Kill a Mockingbird', author: 'Harper Lee', year: 1960},
+    {id: 3, title: '1984', author: 'George Orwell', year: 1949},
+    {id: 4, title: 'Brave New World', author: 'Aldous Huxley', year: 1932},
+    {id: 5, title: 'The Catcher in the Rye', author: 'J.D.Salinger', year: 1951},
+];
+
+// create function getBookTitle
+// take in parameter bookId
+// use find function to find book with matching bookId
+// return book title
+
+
+function getBookTitle(bookId) {
+    const bookTitle = books.find(book => book.id === bookId);
+    return bookTitle.title
+}
+
+console.log(getBookTitle(4))
+console.log(getBookTitle(2))
+
+function getOldBooks() {
+    const oldBooks = books.filter(book => book.year < 1950);
+    return oldBooks
+}
+
+console.log(getOldBooks())
+
+function addGenre() {
+    
+}
