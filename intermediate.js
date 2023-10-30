@@ -76,3 +76,42 @@ function findMatchingAnimals(beginsWith){
 // loop over the animals array
 // if startsWith returns true, add animal to new array
 // return new array
+
+// question 4 pseudo code:
+// create a function camelCase
+// take in parameter cssProp
+// separate string at "-" with split()
+// capitalize each word after the first word (start at array i=1)
+// join words with no spaces
+
+// function camelCase(cssProp) {
+//     let separate = cssProp.split("-");
+//     for (i = 1; i < separate.length; i++) {
+//         separate[i] = separate[i].slice(0, 1).toUpperCase() +
+//         separate[i].substr(1);
+//     };
+//     return separate.join("")
+// }
+
+// const camelCase = (cssProp) => {
+//     let separate = cssProp.split('-'); for (i = 1; i < separate.length; i++) {
+//         separate[i] = separate[i].charAt(0).toUpperCase() + separate[i].substr(1);
+//     }; return separate.join('')
+// }
+
+function camelCase(cssProp) {
+    let separate = cssProp.split('-');
+    for (let word in separate) {
+        // console.log(separate[word]);
+        if (separate.length != 1){
+            separate[1] = separate[1].slice(0, 1).toUpperCase() + separate[1].substr(1);
+        return separate.join('')
+        };
+        return separate.join('')
+    }
+}
+
+console.log(camelCase('margin-left'))
+console.log(camelCase('background-image'))
+console.log(camelCase('display'))
+
