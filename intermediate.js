@@ -197,8 +197,8 @@ function getBookTitle(bookId) {
     return bookTitle.title
 }
 
-console.log(getBookTitle(4))
-console.log(getBookTitle(2))
+// console.log(getBookTitle(4))
+// console.log(getBookTitle(2))
 
 function getOldBooks() {
     const oldBooks = books.filter(book => book.year < 1950);
@@ -212,4 +212,26 @@ function addGenre(genre) {
     return genres
 }
 
-console.log(addGenre('Classic'))
+// console.log(addGenre('Classic'))
+
+// create function getTitles
+// take in parameter authorInitial
+// filter authors by initial
+// create new map with book titles
+// return titles map
+
+// books.filter(getTitles())
+
+function getTitles(authorInitial) {
+    const bookByAuthor = books.filter(book => book.author[0] === authorInitial);
+    const titles = bookByAuthor.map(book => book.title);
+    return titles
+}
+
+// console.log(getTitles('G'))
+
+// create function latestBook
+
+function latestBook() {
+    
+}
