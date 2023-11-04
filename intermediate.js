@@ -259,10 +259,17 @@ function getTitles(authorInitial) {
 
 // create function latestBook
 
-function latestBook() {
-    
-}
+// function latestBook() {
+//     books.sort((book1, book2) => book1.year - book2.year).reverse()
+//     console.log(books[0])
+// }
+// latestBook()
 
+function latestBook() {
+    const latestBook = books.find((book1, book2) => book1.year > book2.year ? book1 : book2)
+    return latestBook // blocked; only checks first 2 books
+}
+// console.log(latestBook())
 
 // Question 8:
 
