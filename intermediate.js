@@ -259,3 +259,31 @@ function printPhoneBook(contacts) {
 let phoneBook = new Map([...phoneBookABC, ...phoneBookDEF])
 
 // printPhoneBook(phoneBook)
+
+
+// Question 9:
+
+let salaries = {
+    "Timothy": 35000,
+    "David": 25000,
+    "Mary": 55000,
+    "Christina": 75000,
+    "James": 43000
+}
+
+function sumSalaries(salaries) {
+    let sum = 0;
+    for (let value in salaries){
+        sum += salaries[value]
+    };
+    return sum
+}
+
+// console.log(sumSalaries(salaries))
+
+function topEarner(salaries) {
+    // const top = salaries.reduce((p1, p2) => (p1 && p1.value > p2.value) ? p1 : p2);
+    // return top[key]
+}
+// console.log(topEarner(salaries))
+
