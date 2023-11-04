@@ -313,13 +313,18 @@ function sumSalaries(salaries) {
     return sum
 }
 
-// console.log(sumSalaries(salaries))
+console.log(sumSalaries(salaries))
 
 function topEarner(salaries) {
-    // const top = salaries.reduce((p1, p2) => (p1 && p1.value > p2.value) ? p1 : p2);
-    // return top[key]
+    for (let [key, value] of Object.entries(salaries)) {
+        console.log(`${key}: ${value}`)
+        // console.log(salariesMap)
+        const top = Object.values(salaries).reduce((p1, p2) => (p1.value > p2.value) ? p1 : p2);
+        return top
+    }
+
 }
-// console.log(topEarner(salaries))
+console.log(topEarner(salaries))
 
 
 // Question 10:
