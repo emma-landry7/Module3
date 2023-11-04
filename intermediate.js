@@ -1,3 +1,4 @@
+// Question 1:
 function ucFirstLetters(string) {
     let separate = string.split(' ');
     for (let i = 0; i < separate.length; i++) {
@@ -9,7 +10,7 @@ function ucFirstLetters(string) {
 
 // console.log(ucFirstLetters("los angeles")) //Los Angeles
 
-
+// Question 2:
 // function truncate(str, max) {
 //     if (str.length <= max) {
 //         return str;
@@ -28,7 +29,7 @@ const truncate = function(str, max) {
 // console.log(truncate("This is a test of my declaration function", 15))
 // console.log(truncate('Test 2 of my declaration function', 50))
 
-
+// Question 3:
 const animals = ['Tiger', 'Giraffe']
 animals.push('Bear')
 animals.push('Hippo')
@@ -77,7 +78,8 @@ function findMatchingAnimals(beginsWith){
 // if startsWith returns true, add animal to new array
 // return new array
 
-// question 4 pseudo code:
+// Question 4:
+// pseudo code:
 // create a function camelCase
 // take in parameter cssProp
 // separate string at "-" with split()
@@ -115,7 +117,7 @@ function findMatchingAnimals(beginsWith){
 // console.log(camelCase('background-image'))
 // console.log(camelCase('display'))
 
-
+// Question 5:
 let twentyCents = 0.20
 let tenCents = 0.10
 
@@ -160,7 +162,7 @@ function currencyOperation(float1, float2, operation, numDecimals) {
 // console.log(currencyOperation(9.97, 3.32, '/'))
 // console.log(currencyOperation(2.34, 6.45, '*'))
 
-
+// Question 6:
 function unique(duplicatesArray) {
     const uniqueArray = new Set([...duplicatesArray]);
     return uniqueArray
@@ -170,6 +172,66 @@ const colors = ['red', 'green', 'blue', 'yellow', 'orange', 'red', 'blue', 'yell
 const testScores = [55, 84, 97, 63, 55, 32, 84, 91, 55, 43]
 const pets = ['dog', 'cat', 'hamster', 'dog', 'snake', 'cat', 'rabbit', 'dog']
 
-console.log(unique(colors))
-console.log(unique(testScores))
-console.log(unique(pets))
+// console.log(unique(colors))
+// console.log(unique(testScores))
+// console.log(unique(pets))
+
+// Question 7:
+
+const books = [
+    {id: 1, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', year: 1925},
+    {id: 2, title: 'To Kill a Mockingbird', author: 'Harper Lee', year: 1960},
+    {id: 3, title: '1984', author: 'George Orwell', year: 1949},
+    {id: 4, title: 'Brave New World', author: 'Aldous Huxley', year: 1932},
+    {id: 5, title: 'The Catcher in the Rye', author: 'J.D.Salinger', year: 1951},
+];
+
+// create function getBookTitle
+// take in parameter bookId
+// use find function to find book with matching bookId
+// return book title
+
+
+function getBookTitle(bookId) {
+    const bookTitle = books.find(book => book.id === bookId);
+    return bookTitle.title
+}
+
+// console.log(getBookTitle(4))
+// console.log(getBookTitle(2))
+
+function getOldBooks() {
+    const oldBooks = books.filter(book => book.year < 1950);
+    return oldBooks
+}
+
+// console.log(getOldBooks())
+
+function addGenre(genre) {
+    const genres = books.map(book => ({...book, genre: genre}))
+    return genres
+}
+
+// console.log(addGenre('Classic'))
+
+// create function getTitles
+// take in parameter authorInitial
+// filter authors by initial
+// create new map with book titles
+// return titles map
+
+// books.filter(getTitles())
+
+function getTitles(authorInitial) {
+    const bookByAuthor = books.filter(book => book.author[0] === authorInitial);
+    const titles = bookByAuthor.map(book => book.title);
+    return titles
+}
+
+// console.log(getTitles('G'))
+
+// create function latestBook
+
+function latestBook() {
+    
+}
