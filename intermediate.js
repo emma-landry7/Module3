@@ -235,3 +235,27 @@ function getTitles(authorInitial) {
 function latestBook() {
     
 }
+
+
+// Question 8:
+
+const phoneBookABC = new Map() //an empty map to begin with
+phoneBookABC.set('Annabelle', '0412312343')
+phoneBookABC.set('Barry', '0433221117')
+phoneBookABC.set('Caroline', '0455221182')
+
+const phoneBookDEF = new Map()
+phoneBookDEF.set('Daniel', '0498765432')
+phoneBookDEF.set('Emma', '0457776666')
+phoneBookDEF.set('Francis', '0421145678')
+
+phoneBookABC.set('Caroline', '0899223344')
+
+function printPhoneBook(contacts) {
+    console.log(contacts.entries())
+}
+// printPhoneBook(phoneBookDEF)
+
+let phoneBook = new Map([...phoneBookABC, ...phoneBookDEF])
+
+// printPhoneBook(phoneBook)
