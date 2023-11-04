@@ -128,39 +128,66 @@ let fixedTen = tenCents.toFixed(2)
 
 // console.log(fixedTwenty + fixedTen) // this does not work because JavaScript sees these as strings and concatenates them, instead of treating them like numbers and adding them
 
-// function currencyAddition(float1, float2) {
-//     let num1 = Number.parseFloat(float1);
-//     let num2 = Number.parseFloat(float2);
-//     let result = num1 + num2;
-//     return result.toFixed(2)
-// }
+function currencyAddition(float1, float2) {
+    let num1 = Number.parseFloat(float1);
+    let num2 = Number.parseFloat(float2);
+    let result = num1 + num2;
+    return result.toFixed(2)
+}
 
-// console.log(currencyAddition(.10, .20))
+// console.log(currencyAddition('.10', .20))
 
 function currencyOperation(float1, float2, operation, numDecimals) {
     let num1 = Number.parseFloat(float1);
     let num2 = Number.parseFloat(float2);
     // let expr = operation
-    switch (operation) {
+    let result = function result() {
+        switch (operation) {
         case '+':
             const add = num1 + num2;
-            return add.toFixed(2);
+            return add;
         case '-':
             const subtract = num1 - num2;
-            return subtract.toFixed(2);
+            return subtract;
         case '/':
             const divide = num1 / num2;
-            return divide.toFixed(2);
+            return divide;
         case '*':
             const multiply = num1 * num2;
-            return multiply.toFixed(2)
+            return multiply
+        default:
+            return num1 + num2
+    }};
+    // switch (operation) {
+    //     case '+':
+    //         const add = num1 + num2;
+    //         return add.toFixed(2);
+    //     case '-':
+    //         const subtract = num1 - num2;
+    //         return subtract.toFixed(2);
+    //     case '/':
+    //         const divide = num1 / num2;
+    //         return divide.toFixed(2);
+    //     case '*':
+    //         const multiply = num1 * num2;
+    //         return multiply.toFixed(2)
+    // };
+    if (numDecimals >= 1 && numDecimals <= 10) {
+        return result().toFixed(numDecimals)
+    } else if (numDecimals < 1 || numDecimals > 10) {
+        return 'numDecimals cannot be less than 1 or greater than 10'
     }
+    return result().toFixed(2)
 }
 
-// console.log(currencyOperation(8.23, 2.71, '-'))
-// console.log(currencyOperation(0.10, 0.20, '+')) 
-// console.log(currencyOperation(9.97, 3.32, '/'))
-// console.log(currencyOperation(2.34, 6.45, '*'))
+// console.log(currencyOperation(0.20, 0.10, '-', 3))
+// console.log(currencyOperation('0.10', 0.20, '+', '2'))
+// console.log(currencyOperation(.4, .5))
+// console.log(currencyOperation(.10, .20,'+', 11))
+// console.log(currencyOperation(0.10, 0.20, '/'))
+// console.log(currencyOperation(0.10, 0.20, '*'))
+// console.log(0.3 == currencyAddition(0.1, 0.2))
+// console.log(0.3 == currencyOperation(0.1, 0.2, '+'))
 
 // Question 6:
 function unique(duplicatesArray) {
@@ -291,12 +318,12 @@ function topEarner(salaries) {
 // Question 10:
 
 const today = new Date()
-console.log('Current time is ' + today.toLocaleTimeString())
+// console.log('Current time is ' + today.toLocaleTimeString())
 
-console.log(today.getHours() + ' hours have passed so far today')
+// console.log(today.getHours() + ' hours have passed so far today')
 
-console.log(today.getHours() * 60 + today.getMinutes() + ' minutes have passed so far today')
-console.log(today.getHours() * 60 * 60 + today.getMinutes() * 60 + today.getSeconds() + ' seconds have passed so far today')
+// console.log(today.getHours() * 60 + today.getMinutes() + ' minutes have passed so far today')
+// console.log(today.getHours() * 60 * 60 + today.getMinutes() * 60 + today.getSeconds() + ' seconds have passed so far today')
 
 const birthday = new Date(2000, 6, 30)
 const x = today.getFullYear() - birthday.getFullYear()
@@ -306,7 +333,7 @@ const z = today.getDate() + 1 // there are 31 days in July, and my birthday is o
 // console.log(x)
 // console.log(y)
 // console.log(z)
-console.log(`I am ${x} years, ${y} months, and ${z} days old`)
+// console.log(`I am ${x} years, ${y} months, and ${z} days old`)
 
 function daysInBetween(date1, date2) {
     let days1 = new Date(date1).getTime() / 1000 / 60 / 60 / 24;
@@ -315,4 +342,4 @@ function daysInBetween(date1, date2) {
     return result
 }
 
-console.log(daysInBetween(('2021-08-03'), ('2023-10-03')))
+// console.log(daysInBetween(('2021-08-03'), ('2023-10-03')))
