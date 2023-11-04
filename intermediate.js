@@ -287,3 +287,32 @@ function topEarner(salaries) {
 }
 // console.log(topEarner(salaries))
 
+
+// Question 10:
+
+const today = new Date()
+console.log('Current time is ' + today.toLocaleTimeString())
+
+console.log(today.getHours() + ' hours have passed so far today')
+
+console.log(today.getHours() * 60 + today.getMinutes() + ' minutes have passed so far today')
+console.log(today.getHours() * 60 * 60 + today.getMinutes() * 60 + today.getSeconds() + ' seconds have passed so far today')
+
+const birthday = new Date(2000, 6, 30)
+const x = today.getFullYear() - birthday.getFullYear()
+const y = today.getMonth() - birthday.getMonth() - 1
+const z = today.getDate() + 1 // there are 31 days in July, and my birthday is on the 30th, so my age is today's date + 1
+// const z = (31 - birthday.getDate()) + today.getDate() // (days in birth month - birth date) + days passed in current month
+// console.log(x)
+// console.log(y)
+// console.log(z)
+console.log(`I am ${x} years, ${y} months, and ${z} days old`)
+
+function daysInBetween(date1, date2) {
+    let days1 = new Date(date1).getTime() / 1000 / 60 / 60 / 24;
+    let days2 = new Date(date2).getTime() / 1000 / 60 / 60 / 24;
+    result = days2 - days1;
+    return result
+}
+
+console.log(daysInBetween(('2021-08-03'), ('2023-10-03')))
