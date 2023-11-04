@@ -255,14 +255,31 @@ function getTitles(authorInitial) {
     return titles
 }
 
-// console.log(getTitles('G'))
+// console.log(getTitles('H'))
 
 // create function latestBook
 
-function latestBook() {
-    
-}
+// function latestBook() {
+//     books.sort((book1, book2) => book1.year - book2.year).reverse()
+//     console.log(books[0])
+// }
+// latestBook()
 
+function latestBook() {
+    // const latestBook = books.find((book1, book2) => book1.year > book2.year ? book1 : book2)
+    // return latestBook // blocked; only checks first 2 books
+    // console.log(books[0].year)
+    let latestYear = 1920
+    books.forEach(book => {
+        if (book.year > latestYear) {
+            latestYear = book.year
+        }
+        // console.log(book.year)
+    })
+    return books.find(book => book.year == latestYear)
+}
+// console.log(latestBook())
+// console.log(latestBook())
 
 // Question 8:
 
@@ -306,13 +323,31 @@ function sumSalaries(salaries) {
     return sum
 }
 
-// console.log(sumSalaries(salaries))
+console.log(sumSalaries(salaries))
 
 function topEarner(salaries) {
     // const top = salaries.reduce((p1, p2) => (p1 && p1.value > p2.value) ? p1 : p2);
     // return top[key]
+    let topSalary = 0
+    let name = ""
+    for (let person in salaries) {
+        // console.log(salaries[person])
+        if (salaries[person] > topSalary) {
+            topSalary = salaries[person]
+            name = person
+            // console.log(topSalary)
+            // console.log(name)
+        }
+        // console.log(name)
+    }
+    // console.log(name)
+    let topEarner = {
+        [name]: topSalary
+    }
+    return topEarner
 }
-// console.log(topEarner(salaries))
+// topEarner(salaries)
+console.log(topEarner(salaries))
 
 
 // Question 10:
