@@ -38,23 +38,24 @@ const delayMsg = (msg) => console.log(`This message will be printed after a dela
 // clearTimeout(canceledMsg)
 
 // Question 3:
-let msg = 'default'
-function printMe() {
-    console.log(`printing debounced message: ${msg}`)
-}
+// let msg = 'default'
+// function printMe() {
+//     console.log(`printing debounced message: ${msg}`)
+// }
 
-console.log('Go!')
-printMe = debounce(printMe, 2000, 'hello') 
-function debounce(func, ms, message) {
-    let timer;
-    msg = message
-    return function() {
-        clearTimeout(timer);
-        timer = setTimeout(() => {func()}, ms);
-    }
-}
+// console.log('Go!')
+// printMe = debounce(printMe, 2000, 'hello') 
+// function debounce(func, ms, message) {
+//     let timer;
+//     msg = message
+//     return function() {
+//         clearTimeout(timer);
+//         timer = setTimeout(() => {func()}, ms);
+//     }
+// }
 
+// setTimeout(printMe, 100)
+// setTimeout(printMe, 200)
+// setTimeout(printMe, 300)
 
-setTimeout(printMe, 100)
-setTimeout(printMe, 200)
-setTimeout(printMe, 300)
+// Question 4:
