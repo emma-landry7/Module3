@@ -9,14 +9,30 @@ function makeCounter(startsFrom, incrementBy) {
     };
 }
 
-let counter1 = makeCounter(0, 1);
+// let counter1 = makeCounter(0, 1);
 
-counter1()
-counter1()
+// counter1()
+// counter1()
 
-let counter2 = makeCounter(5, 5)
-counter2()
-counter2()
-counter2()
-counter2()
-counter1()
+// let counter2 = makeCounter(5, 5)
+// counter2()
+// counter2()
+// counter2()
+// counter2()
+// counter1()
+
+// Question 2:
+// a) they will print in this order: #4, #3, #2, #1
+
+// function delayMsg(msg) {
+//     console.log(`This message will be printed after a delay: ${msg}`)
+// }
+const delayMsg = (msg) => console.log(`This message will be printed after a delay: ${msg}`)
+
+setTimeout(delayMsg, 100, '#1: Delayed by 100ms')
+setTimeout(delayMsg, 20, '#2: Delayed by 20ms')
+setTimeout(delayMsg, 0, '#3: Delayed by 0ms')
+delayMsg('#4: Not delayed at all')
+
+let canceledMsg = setTimeout(delayMsg, 15000, '#5: Delayed by 15 seconds')
+clearTimeout(canceledMsg)
