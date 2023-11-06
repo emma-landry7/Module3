@@ -59,3 +59,50 @@ const delayMsg = (msg) => console.log(`This message will be printed after a dela
 // setTimeout(printMe, 300)
 
 // Question 4:
+
+// function fibonacci() { // function without interval timer
+//     let a = 1;
+//     let b = 1;
+//     let c;
+//     for (let i = 0; i < 10; i++) {
+//         console.log(a);
+//         c = a + b;
+//         a = b;
+//         b = c
+//     }
+// }
+// fibonacci()
+
+// function printFibonacci() {
+//     let a = 1;
+//     let b = 1;
+//     let c;
+//     let timer = setInterval(function fibonacci(){
+//         for (let i = 0; i == 0 ; i++) {
+//             console.log(a);
+//             c = a + b;
+//             a = b;
+//             b = c;
+//         }   
+//     }, 1000);
+//     setTimeout(() => clearInterval(timer), 10*1000)
+// }
+// printFibonacci()
+
+// function printFibonacciTimeouts(delay, limit) {
+//     let counter = 1;
+//     let a = 1;
+//     let b = 1;
+//     let c;
+//     setTimeout(function fibonacci(current) {
+//         for (let i = 0; i == 0; i++){
+//             console.log(a);
+//             c = a + b;
+//             a = b;
+//             b = c;
+//         };
+//         if (current < limit) setTimeout(fibonacci, delay, current+1);
+//     }, delay, counter)
+// }
+// printFibonacciTimeouts(1000, 5)
+
