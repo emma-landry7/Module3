@@ -140,3 +140,32 @@ const myCar = {...car, make: 'Kia'}
 // setTimeout(carBound, 2000)
 const myCarBound = myCar.description.bind(myCar)
 // setTimeout(myCarBound, 300)
+
+
+// Question 6:
+
+// function delay(func, ms) {
+//     setTimeout(func, ms)
+//     // console.log(this)
+// }
+
+function multiply(a, b) {
+    // let a = 5
+    // let b = 5
+    let result = a * b
+    // console.log(result)
+    return result
+}
+// console.log('go')
+// delay(multiply, 1000)
+
+// Function.prototype = delay
+Function.prototype.delay = function delay(ms) {
+    setTimeout(multiply, ms)
+    console.log(multiply)
+    // console.log(multiply(5, 5))
+    // return this
+}
+
+console.log('go')
+multiply.delay(2000)(5, 5)
