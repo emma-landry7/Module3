@@ -160,12 +160,48 @@ function multiply(a, b) {
 // delay(multiply, 1000)
 
 // Function.prototype = delay
-Function.prototype.delay = function delay(ms) {
-    setTimeout(multiply, ms)
-    console.log(multiply)
-    // console.log(multiply(5, 5))
-    // return this
+// Function.prototype.delay = function delay(ms) {
+//     setTimeout(multiply, ms)
+//     console.log(multiply)
+//     // console.log(multiply(5, 5))
+//     // return this
+// }
+
+// console.log('go')
+// multiply.delay(2000)(5, 5)
+
+
+// Question 7:
+let person = ""
+function Person(name, age, gender) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    function toString() {
+        console.log('Name: ' + name + ', ' + 'Age: ' + age + ', ' + 'Gender: ' + gender)
+        // return toString()
+    }
+    // return toString()
 }
 
-console.log('go')
-multiply.delay(2000)(5, 5)
+Person.prototype = person
+
+const person1 = new Person('James Brown', 73, 'male')
+// person1.toString()
+// console.log(person1.toString())
+
+const person2 = new Person('Karen Smith', 42, 'female')
+const person3 = new Person('Kendal Taylor', 22, 'female')
+
+function Student(name, age, gender, cohort) {
+    Person.call(this, name, age, gender)
+    this.cohort = cohort
+    function toString(){
+        console.log('Name: ' + name + ', ' + 'Age: ' + age + ', ' + 'Gender: ' + gender + ', ' + 'Cohort: ' + cohort)
+    }
+    return toString()
+}
+
+// const student1 = new Student('Clara', 24, 'female', 'Alpha Beta Theta')
+// console.log(student1)
+// const student2 = new Student('Jason', 40, 'male', 'doctors')
