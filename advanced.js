@@ -21,6 +21,7 @@ function makeCounter(startsFrom, incrementBy) {
 // counter2()
 // counter1()
 
+
 // Question 2:
 // a) they will print in this order: #4, #3, #2, #1
 
@@ -36,6 +37,7 @@ const delayMsg = (msg) => console.log(`This message will be printed after a dela
 
 // let canceledMsg = setTimeout(delayMsg, 15000, '#5: Delayed by 15 seconds')
 // clearTimeout(canceledMsg)
+
 
 // Question 3:
 // let msg = 'default'
@@ -58,8 +60,8 @@ const delayMsg = (msg) => console.log(`This message will be printed after a dela
 // setTimeout(printMe, 200)
 // setTimeout(printMe, 300)
 
-// Question 4:
 
+// Question 4:
 // function fibonacci() { // function without interval timer
 //     let a = 1;
 //     let b = 1;
@@ -106,3 +108,35 @@ const delayMsg = (msg) => console.log(`This message will be printed after a dela
 // }
 // printFibonacciTimeouts(1000, 5)
 
+
+// Question 5:
+// calling car.description within setTimeout fails because the function is passed as a reference and loses the context of "this"
+
+let car = {
+    make: "Porsche",
+    model: '911',
+    year: 1964,
+
+    description() {
+        console.log(`This car is a ${this.make} ${this.model} from ${this.year}`)
+    }
+};
+
+
+// car.description()
+
+// setTimeout(() => car.description(), 1000)
+
+const carClone = {...car, year: 1972}
+// setTimeout(() => carClone.description(), 1500)
+
+// c) the clone's delayed description() uses the new value from b)
+const carBound = car.description.bind(car)
+// const carCloneBound = carClone.description.bind(carClone)
+// setTimeout(carBound, 2000)
+// setTimeout(carCloneBound, 2500)
+
+const myCar = {...car, make: 'Kia'}
+// setTimeout(carBound, 2000)
+const myCarBound = myCar.description.bind(myCar)
+// setTimeout(myCarBound, 300)
