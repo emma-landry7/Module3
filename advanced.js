@@ -144,64 +144,65 @@ const myCarBound = myCar.description.bind(myCar)
 
 // Question 6:
 
-// function delay(func, ms) {
-//     setTimeout(func, ms)
-//     // console.log(this)
-// }
+function delay(func, ms) {
+    setTimeout(func, ms)
+    // console.log(this)
+}
 
-function multiply(a, b) {
+function multiply(a, b, c, d) {
     // let a = 5
     // let b = 5
-    let result = a * b
-    // console.log(result)
-    return result
+    let result = a * b * c * d
+    console.log(result)
+    // return result
 }
-// console.log('go')
-// delay(multiply, 1000)
 
 // Function.prototype = delay
-// Function.prototype.delay = function delay(ms) {
-//     setTimeout(multiply, ms)
-//     console.log(multiply)
-//     // console.log(multiply(5, 5))
-//     // return this
-// }
+Function.prototype.delay = function(delayMs) {
+    // setTimeout(this, ms)
+    // console.log(this)
+    return (...args) => {
+        setTimeout(() => {
+            this.apply(null, args)
+            // this(...args)
+        }, delayMs)
+    }
+}
 
 // console.log('go')
-// multiply.delay(2000)(5, 5)
-
+// multiply.delay(2000)(5, 5, 1, 9)
 
 // Question 7:
-let person = ""
+// let person = ""
 function Person(name, age, gender) {
     this.name = name;
     this.age = age;
     this.gender = gender;
-    function toString() {
-        console.log('Name: ' + name + ', ' + 'Age: ' + age + ', ' + 'Gender: ' + gender)
-        // return toString()
-    }
-    // return toString()
+    
 }
-
-Person.prototype = person
-
+Person.prototype.toString = function toString() {
+        return 'Name: ' + this.name + ', ' + 'Age: ' + this.age + ', ' + 'Gender: ' + this.gender
+    }
 const person1 = new Person('James Brown', 73, 'male')
 // person1.toString()
-// console.log(person1.toString())
 
 const person2 = new Person('Karen Smith', 42, 'female')
 const person3 = new Person('Kendal Taylor', 22, 'female')
+console.log(person1.toString())
+console.log(person2.toString())
+console.log(person3.toString())
 
 function Student(name, age, gender, cohort) {
     Person.call(this, name, age, gender)
     this.cohort = cohort
-    function toString(){
-        console.log('Name: ' + name + ', ' + 'Age: ' + age + ', ' + 'Gender: ' + gender + ', ' + 'Cohort: ' + cohort)
-    }
-    return toString()
 }
+Student.prototype.toString = function toString(){
+        return 'Name: ' + this.name + ', ' + 'Age: ' + this.age + ', ' + 'Gender: ' + this.gender + ', ' + 'Cohort: ' + this.cohort
+    }
 
-// const student1 = new Student('Clara', 24, 'female', 'Alpha Beta Theta')
-// console.log(student1)
-// const student2 = new Student('Jason', 40, 'male', 'doctors')
+const student1 = new Student('Clara', 24, 'female', 'Alpha Beta Theta')
+const student2 = new Student('Jason', 40, 'male', 'doctors')
+console.log(student2.toString())
+console.log(student1.toString())
+// console.log(person2.toString())
+// console.log(person1)
