@@ -290,4 +290,27 @@ class AlarmClock extends DigitalClock {
     }
 }
 const alarmClock = new AlarmClock("my alarm clock:", '19:25')
-alarmClock.start()
+// alarmClock.start()
+
+// Question 9:
+
+function randomDelay() {
+    const delay = Math.round(Math.random() * 20 * 1000)
+
+    return new Promise(function(resolve, reject) {
+        setTimeout(function() {
+            if (delay % 2 === 0) {
+                resolve(delay)
+            } 
+            else {
+                reject(delay)
+            }
+        }, delay)
+    })
+}
+
+randomDelay().then(function(delay){
+    console.log(`Succeeded with delay: ${delay}`)
+}).catch(function(delay) {
+    console.log(`Failed with delay: ${delay}`)
+})
